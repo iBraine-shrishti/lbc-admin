@@ -133,11 +133,11 @@ const EditBlog = () => {
           </Link>
           <div>
             <div className="flex items-center gap-3 mb-1">
-               <div className="w-2.5 h-2.5 bg-slate-900 rounded-full animate-pulse ring-2 ring-slate-900/20"></div>
-               <span className="text-[0.55rem] font-black uppercase tracking-[0.4em] text-slate-900 font-heading">{isEdit ? "Edit Post" : "New Post"}</span>
+               <div className="w-2.5 h-2.5 bg-[#f59e0b] rounded-full animate-pulse ring-2 ring-[#f59e0b]/20 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
+               <span className="text-[0.55rem] font-black uppercase tracking-[0.4em] text-[#f59e0b] font-heading">{isEdit ? "Edit Post" : "New Post"}</span>
             </div>
             <h2 className="text-[1.8rem] font-black text-slate-900 uppercase tracking-tighter leading-none">
-              {isEdit ? "Update" : "Publish"} <span className="text-slate-900 font-heading">Post</span>
+              {isEdit ? "Update" : "Publish"} <span className="text-[#f59e0b] font-heading">Post</span>
             </h2>
           </div>
         </div>

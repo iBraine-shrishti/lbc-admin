@@ -236,13 +236,13 @@ const TopSellingAdmin = () => {
       <div className="flex justify-between items-end gap-6 flex-wrap bg-white shadow-sm backdrop-blur-xl border border-slate-200 p-8 rounded-[2rem]">
         <div>
           <div className="flex items-center gap-2.5 mb-2">
-            <div className="w-2.5 h-2.5 bg-slate-900 rounded-full animate-pulse ring-2 ring-slate-900/20"></div>
-            <span className="text-[0.68rem] font-black uppercase tracking-[0.35em] text-slate-900 font-heading">
+            <div className="w-2.5 h-2.5 bg-[#f59e0b] rounded-full animate-pulse ring-2 ring-[#f59e0b]/20 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
+            <span className="text-[0.68rem] font-black uppercase tracking-[0.35em] text-[#f59e0b] font-heading">
               Homepage Manager
             </span>
           </div>
           <h2 className="text-[2.2rem] font-black text-slate-900 uppercase tracking-tighter leading-none flex items-center gap-3">
-            Top Selling <span className="text-slate-900 font-heading">Items</span> <FaFire className="text-[#b89000] text-2xl" />
+            Top Selling <span className="text-[#f59e0b] font-heading">Items</span> <FaFire className="text-[#f59e0b] text-2xl" />
           </h2>
           <p className="text-[0.7rem] font-bold text-slate-500 uppercase tracking-widest mt-2">
             Control the exact products and order displayed in the Top Selling section on the Storefront Homepage
