@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Rajdhani:wght@500;600;700;800&family=Sora:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f8fafc] text-slate-900;
+    font-family: 'Sora', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  /* Redefining extremely small Tailwind custom classes to readable sizes */
+  .text-\[0\.45rem\] { font-size: 0.75rem !important; }
+  .text-\[0\.5rem\] { font-size: 0.75rem !important; }
+  .text-\[0\.55rem\] { font-size: 0.75rem !important; }
+  .text-\[0\.6rem\] { font-size: 0.8rem !important; }
+  .text-\[0\.65rem\] { font-size: 0.8rem !important; }
+  .text-\[0\.7rem\] { font-size: 0.8rem !important; }
+  .text-xs { font-size: 0.8rem !important; }
+}
+
+/* Hide scrollbars class */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Custom Quill Editor Styles */
+.ql-toolbar.ql-snow {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-color: #e2e8f0 !important;
+  background-color: #f8fafc;
+}
+.ql-container.ql-snow {
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border-color: #e2e8f0 !important;
+  min-height: 150px;
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+.ql-editor {
+  min-height: 150px;
+  color: #0f172a;
+}
