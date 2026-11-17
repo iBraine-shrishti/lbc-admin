@@ -106,7 +106,7 @@ const AdminLogin = () => {
         transition={{ duration: 0.5 }}
         className="relative z-10 w-[92%] max-w-[430px]"
       >
-        <div className="bg-white/95 dark:bg-[#1c1c1c]/95 backdrop-blur-2xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-10 rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+        <div className="bg-[#181818]/95 backdrop-blur-2xl border border-white/10 p-8 sm:p-10 rounded-[2rem] shadow-[0_25px_70px_rgba(0,0,0,0.7)] text-white">
           {/* LOGO & HEADER */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
@@ -119,15 +119,15 @@ const AdminLogin = () => {
                 }}
               />
             </div>
-            <div className="w-14 h-14 bg-[#FECD08]/20 border border-[#FECD08]/40 rounded-2xl flex items-center justify-center text-[#212121] dark:text-[#FECD08] mx-auto mb-4 shadow-sm">
-              <FaUserShield size={24} className="text-[#212121] dark:text-[#FECD08]" />
+            <div className="w-14 h-14 bg-[#FECD08]/15 border border-[#FECD08]/35 rounded-2xl flex items-center justify-center text-[#FECD08] mx-auto mb-4 shadow-sm">
+              <FaUserShield size={24} className="text-[#FECD08]" />
             </div>
-            <h1 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-wider font-heading">
+            <h1 className="text-2xl font-black text-white uppercase tracking-wider font-heading">
               LBC MOTO ADMIN
             </h1>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 mt-2 bg-[#FECD08]/15 border border-[#FECD08]/30 rounded-full">
-              <FaLock size={9} className="text-[#212121] dark:text-[#FECD08]" />
-              <p className="text-[#212121] dark:text-[#FECD08] text-[0.65rem] font-bold uppercase tracking-[0.25em]">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 mt-2.5 bg-[#FECD08]/15 border border-[#FECD08]/30 rounded-full">
+              <FaLock size={9} className="text-[#FECD08]" />
+              <p className="text-[#FECD08] text-[0.65rem] font-bold uppercase tracking-[0.25em]">
                 Restricted Admin Access
               </p>
             </div>
@@ -136,7 +136,7 @@ const AdminLogin = () => {
           {/* FORM */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">
+              <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-slate-300 mb-1.5">
                 Admin Email / Username
               </label>
               <input
@@ -147,13 +147,13 @@ const AdminLogin = () => {
                   setFormData({ ...formData, username: e.target.value })
                 }
                 required
-                className="w-full bg-slate-50 dark:bg-black/30 border border-slate-200 dark:border-white/10 p-3.5 rounded-xl text-slate-900 dark:text-white text-xs font-semibold tracking-wide outline-none focus:border-[#FECD08] focus:ring-2 focus:ring-[#FECD08]/20 transition-all placeholder:text-slate-400"
+                className="w-full bg-[#121212]/90 border border-white/15 p-3.5 rounded-xl text-white text-xs font-semibold tracking-wide outline-none focus:border-[#FECD08] focus:ring-2 focus:ring-[#FECD08]/20 transition-all placeholder:text-slate-500"
               />
             </div>
 
             {/* Password Field with Eye Toggle */}
             <div>
-              <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">
+              <label className="block text-[0.7rem] font-bold uppercase tracking-wider text-slate-300 mb-1.5">
                 Password
               </label>
               <div className="relative">
@@ -165,12 +165,12 @@ const AdminLogin = () => {
                     setFormData({ ...formData, password: e.target.value })
                   }
                   required
-                  className="w-full bg-slate-50 dark:bg-black/30 border border-slate-200 dark:border-white/10 p-3.5 rounded-xl text-slate-900 dark:text-white text-xs font-semibold tracking-wide outline-none focus:border-[#FECD08] focus:ring-2 focus:ring-[#FECD08]/20 transition-all placeholder:text-slate-400 pr-12"
+                  className="w-full bg-[#121212]/90 border border-white/15 p-3.5 rounded-xl text-white text-xs font-semibold tracking-wide outline-none focus:border-[#FECD08] focus:ring-2 focus:ring-[#FECD08]/20 transition-all placeholder:text-slate-500 pr-12"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 dark:hover:text-[#FECD08] transition-colors cursor-pointer"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#FECD08] transition-colors cursor-pointer"
                   title={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? <FaEyeSlash size={15} /> : <FaEye size={15} />}
@@ -182,7 +182,7 @@ const AdminLogin = () => {
               <motion.div
                 initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-600 dark:text-red-400 text-xs font-semibold text-center"
+                className="p-3 bg-red-500/15 border border-red-500/30 rounded-xl text-red-400 text-xs font-semibold text-center"
               >
                 {error}
               </motion.div>
@@ -199,8 +199,8 @@ const AdminLogin = () => {
           </form>
 
           {/* FOOTER */}
-          <div className="mt-8 text-center pt-4 border-t border-slate-200/60 dark:border-white/5">
-            <p className="text-[0.62rem] text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em]">
+          <div className="mt-8 text-center pt-4 border-t border-white/10">
+            <p className="text-[0.62rem] text-slate-400 uppercase tracking-[0.2em]">
               LBC MOTO &bull; Authorized Management Console
             </p>
           </div>

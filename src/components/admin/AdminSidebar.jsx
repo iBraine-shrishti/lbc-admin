@@ -94,7 +94,7 @@ const AdminSidebar = ({
 
   return (
     <aside
-      className={`bg-slate-100/90 backdrop-blur-2xl border-r border-slate-200/90 flex flex-col fixed h-screen left-0 top-0 z-[100] transition-all duration-300 ease-in-out ${
+      className={`bg-[#181818] border-r border-white/10 flex flex-col fixed h-screen left-0 top-0 z-[100] transition-all duration-300 ease-in-out text-slate-300 ${
         isCollapsed ? "w-[80px] p-4" : "w-[280px] p-6"
       } ${
         isMobileOpen
@@ -103,16 +103,16 @@ const AdminSidebar = ({
       }`}
     >
       {/* SIDEBAR HEADER / TOGGLE */}
-      <div className="mb-6 flex items-center justify-between pb-4 border-b border-slate-200/80">
+      <div className="mb-6 flex items-center justify-between pb-4 border-b border-white/10">
         {!isCollapsed || isMobileOpen ? (
           <>
             <Link to="/react-admin/dashboard" className="block group min-w-0">
               <img
                 src="/images/lbcmoto-logo.png"
                 alt="LBC Moto Admin"
-                className="w-[125px] h-auto block transition-transform duration-500 group-hover:scale-105 object-contain drop-shadow-sm"
+                className="w-[130px] h-auto block transition-transform duration-500 group-hover:scale-105 object-contain"
               />
-              <div className="mt-1 text-[0.62rem] font-black text-slate-800 uppercase tracking-[0.3em] font-heading">
+              <div className="mt-1.5 text-[0.62rem] font-black text-[#FECD08] uppercase tracking-[0.3em] font-heading">
                 Admin Console
               </div>
             </Link>
@@ -120,7 +120,7 @@ const AdminSidebar = ({
             {/* Desktop Collapse Button */}
             <button
               onClick={toggleSidebar}
-              className="hidden md:flex w-8 h-8 rounded-xl bg-white hover:bg-[#FECD08] hover:text-[#212121] text-slate-700 items-center justify-center transition-all cursor-pointer shadow-sm border border-slate-200/60"
+              className="hidden md:flex w-8 h-8 rounded-xl bg-[#242424] hover:bg-[#FECD08] hover:text-[#212121] text-slate-300 items-center justify-center transition-all cursor-pointer shadow-sm border border-white/10"
               title="Click to Close Sidebar"
             >
               <FaChevronLeft size={11} />
@@ -129,7 +129,7 @@ const AdminSidebar = ({
             {/* Mobile Close Button */}
             <button
               onClick={() => setIsMobileOpen(false)}
-              className="flex md:hidden w-8 h-8 rounded-xl bg-white text-slate-700 items-center justify-center transition-all cursor-pointer shadow-sm border border-slate-200/60"
+              className="flex md:hidden w-8 h-8 rounded-xl bg-[#242424] text-slate-300 items-center justify-center transition-all cursor-pointer shadow-sm border border-white/10"
               title="Close Menu"
             >
               <FaTimes size={13} />
@@ -140,7 +140,7 @@ const AdminSidebar = ({
           <div className="w-full flex flex-col items-center gap-3">
             <button
               onClick={toggleSidebar}
-              className="w-10 h-10 rounded-xl bg-white hover:bg-[#FECD08] hover:text-[#212121] text-slate-700 flex items-center justify-center transition-all cursor-pointer shadow-sm border border-slate-200/80 active:scale-95"
+              className="w-10 h-10 rounded-xl bg-[#242424] hover:bg-[#FECD08] hover:text-[#212121] text-slate-300 flex items-center justify-center transition-all cursor-pointer shadow-sm border border-white/10 active:scale-95"
               title="Click to Open Sidebar"
             >
               <FaBars size={14} />
@@ -163,7 +163,7 @@ const AdminSidebar = ({
       {/* NAVIGATION ITEMS */}
       <nav className="flex flex-col gap-1.5 flex-1 overflow-y-auto no-scrollbar">
         {(!isCollapsed || isMobileOpen) && (
-          <div className="text-[0.65rem] font-black uppercase tracking-[0.25em] text-slate-400 mb-1 px-3">
+          <div className="text-[0.65rem] font-black uppercase tracking-[0.25em] text-slate-500 mb-1 px-3">
             Main Menu
           </div>
         )}
@@ -176,15 +176,15 @@ const AdminSidebar = ({
             isCollapsed && !isMobileOpen ? "justify-center px-0" : ""
           } ${
             isActive("/react-admin/dashboard")
-              ? "bg-[#FECD08] text-[#212121] shadow-md shadow-[#FECD08]/30 font-black"
-              : "text-slate-800 hover:bg-slate-200/70 hover:text-slate-900"
+              ? "bg-[#FECD08] text-[#212121] shadow-lg shadow-[#FECD08]/20 font-black"
+              : "text-slate-300 hover:bg-white/5 hover:text-white"
           }`}
         >
           <FaChartLine
             className={`text-base shrink-0 ${
               isActive("/react-admin/dashboard")
                 ? "text-[#212121]"
-                : "text-slate-600 group-hover:text-black"
+                : "text-slate-400 group-hover:text-[#FECD08]"
             }`}
           />
           {(!isCollapsed || isMobileOpen) && <span>Dashboard</span>}
@@ -198,15 +198,15 @@ const AdminSidebar = ({
             isCollapsed && !isMobileOpen ? "justify-center px-0" : ""
           } ${
             isActive("/react-admin/top-selling")
-              ? "bg-[#FECD08] text-[#212121] shadow-md shadow-[#FECD08]/30 font-black"
-              : "text-slate-800 hover:bg-slate-200/70 hover:text-slate-900"
+              ? "bg-[#FECD08] text-[#212121] shadow-lg shadow-[#FECD08]/20 font-black"
+              : "text-slate-300 hover:bg-white/5 hover:text-white"
           }`}
         >
           <FaFire
             className={`text-base shrink-0 ${
               isActive("/react-admin/top-selling")
                 ? "text-[#212121]"
-                : "text-amber-500 group-hover:text-amber-600"
+                : "text-amber-400 group-hover:text-amber-300"
             }`}
           />
           {(!isCollapsed || isMobileOpen) && <span>Top Selling Items</span>}
@@ -221,8 +221,8 @@ const AdminSidebar = ({
             } ${
               location.pathname.includes("/products") ||
               location.pathname.includes("/add-product")
-                ? "text-slate-900 bg-slate-200/80 font-black"
-                : "text-slate-800 hover:bg-slate-200/70 hover:text-slate-900"
+                ? "text-white bg-white/10 font-black"
+                : "text-slate-300 hover:bg-white/5 hover:text-white"
             }`}
             onClick={() => toggleMenu("products")}
           >
@@ -231,8 +231,8 @@ const AdminSidebar = ({
                 className={`text-base shrink-0 ${
                   location.pathname.includes("/products") ||
                   location.pathname.includes("/add-product")
-                    ? "text-[#212121]"
-                    : "text-slate-600 group-hover:text-black"
+                    ? "text-[#FECD08]"
+                    : "text-slate-400 group-hover:text-[#FECD08]"
                 }`}
               />
               {(!isCollapsed || isMobileOpen) && <span>Products</span>}
@@ -244,7 +244,7 @@ const AdminSidebar = ({
             )}
           </div>
           {isProductsOpen && (!isCollapsed || isMobileOpen) && (
-            <div className="flex flex-col pl-10 mt-1 gap-1 animate-fadeInUp">
+            <div className="flex flex-col pl-10 mt-1 gap-1 animate-fadeInUp border-l border-white/10 ml-4">
               {[
                 { name: "All Products", path: "/react-admin/products" },
                 { name: "Add Product", path: "/react-admin/add-product" },
@@ -257,8 +257,8 @@ const AdminSidebar = ({
                   to={sub.path}
                   className={`text-[0.68rem] font-bold py-2 px-3 rounded-xl transition-all ${
                     location.pathname === sub.path
-                      ? "text-[#212121] bg-white shadow-xs font-black border-l-2 border-[#FECD08]"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+                      ? "text-[#FECD08] bg-[#FECD08]/15 font-black border-l-2 border-[#FECD08]"
+                      : "text-slate-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {sub.name}
@@ -276,8 +276,8 @@ const AdminSidebar = ({
               isCollapsed && !isMobileOpen ? "justify-center px-0" : ""
             } ${
               location.pathname.includes("/orders")
-                ? "text-slate-900 bg-slate-200/80 font-black"
-                : "text-slate-800 hover:bg-slate-200/70 hover:text-slate-900"
+                ? "text-white bg-white/10 font-black"
+                : "text-slate-300 hover:bg-white/5 hover:text-white"
             }`}
             onClick={() => toggleMenu("orders")}
           >
@@ -285,8 +285,8 @@ const AdminSidebar = ({
               <FaShoppingBag
                 className={`text-base shrink-0 ${
                   location.pathname.includes("/orders")
-                    ? "text-[#212121]"
-                    : "text-slate-600 group-hover:text-black"
+                    ? "text-[#FECD08]"
+                    : "text-slate-400 group-hover:text-[#FECD08]"
                 }`}
               />
               {(!isCollapsed || isMobileOpen) && <span>Orders</span>}
@@ -298,7 +298,7 @@ const AdminSidebar = ({
             )}
           </div>
           {isOrdersOpen && (!isCollapsed || isMobileOpen) && (
-            <div className="flex flex-col pl-10 mt-1 gap-1 animate-fadeInUp">
+            <div className="flex flex-col pl-10 mt-1 gap-1 animate-fadeInUp border-l border-white/10 ml-4">
               {[
                 { name: "All Orders", path: "/react-admin/orders" },
                 { name: "Create Order", path: "/react-admin/orders/new" },
@@ -308,8 +308,8 @@ const AdminSidebar = ({
                   to={sub.path}
                   className={`text-[0.68rem] font-bold py-2 px-3 rounded-xl transition-all ${
                     location.pathname === sub.path
-                      ? "text-[#212121] bg-white shadow-xs font-black border-l-2 border-[#FECD08]"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+                      ? "text-[#FECD08] bg-[#FECD08]/15 font-black border-l-2 border-[#FECD08]"
+                      : "text-slate-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {sub.name}
@@ -327,8 +327,8 @@ const AdminSidebar = ({
               isCollapsed && !isMobileOpen ? "justify-center px-0" : ""
             } ${
               location.pathname.includes("/customers")
-                ? "text-slate-900 bg-slate-200/80 font-black"
-                : "text-slate-800 hover:bg-slate-200/70 hover:text-slate-900"
+                ? "text-white bg-white/10 font-black"
+                : "text-slate-300 hover:bg-white/5 hover:text-white"
             }`}
             onClick={() => toggleMenu("customers")}
           >
@@ -336,8 +336,8 @@ const AdminSidebar = ({
               <FaUsers
                 className={`text-base shrink-0 ${
                   location.pathname.includes("/customers")
-                    ? "text-[#212121]"
-                    : "text-slate-600 group-hover:text-black"
+                    ? "text-[#FECD08]"
+                    : "text-slate-400 group-hover:text-[#FECD08]"
                 }`}
               />
               {(!isCollapsed || isMobileOpen) && <span>Customers</span>}
@@ -349,7 +349,7 @@ const AdminSidebar = ({
             )}
           </div>
           {isCustomersOpen && (!isCollapsed || isMobileOpen) && (
-            <div className="flex flex-col pl-10 mt-1 gap-1 animate-fadeInUp">
+            <div className="flex flex-col pl-10 mt-1 gap-1 animate-fadeInUp border-l border-white/10 ml-4">
               {[
                 { name: "All Customers", path: "/react-admin/customers" },
                 { name: "Segments", path: "/react-admin/customers/segments" },
@@ -359,8 +359,8 @@ const AdminSidebar = ({
                   to={sub.path}
                   className={`text-[0.68rem] font-bold py-2 px-3 rounded-xl transition-all ${
                     location.pathname === sub.path
-                      ? "text-[#212121] bg-white shadow-xs font-black border-l-2 border-[#FECD08]"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+                      ? "text-[#FECD08] bg-[#FECD08]/15 font-black border-l-2 border-[#FECD08]"
+                      : "text-slate-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {sub.name}
@@ -378,15 +378,15 @@ const AdminSidebar = ({
             isCollapsed && !isMobileOpen ? "justify-center px-0" : ""
           } ${
             isActive("/react-admin/discount")
-              ? "bg-[#FECD08] text-[#212121] shadow-md shadow-[#FECD08]/30 font-black"
-              : "text-slate-800 hover:bg-slate-200/70 hover:text-slate-900"
+              ? "bg-[#FECD08] text-[#212121] shadow-lg shadow-[#FECD08]/20 font-black"
+              : "text-slate-300 hover:bg-white/5 hover:text-white"
           }`}
         >
           <FaTags
             className={`text-base shrink-0 ${
               isActive("/react-admin/discount")
                 ? "text-[#212121]"
-                : "text-slate-600 group-hover:text-black"
+                : "text-slate-400 group-hover:text-[#FECD08]"
             }`}
           />
           {(!isCollapsed || isMobileOpen) && <span>Discounts</span>}
@@ -400,15 +400,15 @@ const AdminSidebar = ({
             isCollapsed && !isMobileOpen ? "justify-center px-0" : ""
           } ${
             isActive("/react-admin/faqs")
-              ? "bg-[#FECD08] text-[#212121] shadow-md shadow-[#FECD08]/30 font-black"
-              : "text-slate-800 hover:bg-slate-200/70 hover:text-slate-900"
+              ? "bg-[#FECD08] text-[#212121] shadow-lg shadow-[#FECD08]/20 font-black"
+              : "text-slate-300 hover:bg-white/5 hover:text-white"
           }`}
         >
           <FaQuestionCircle
             className={`text-base shrink-0 ${
               isActive("/react-admin/faqs")
                 ? "text-[#212121]"
-                : "text-slate-600 group-hover:text-black"
+                : "text-slate-400 group-hover:text-[#FECD08]"
             }`}
           />
           {(!isCollapsed || isMobileOpen) && <span>FAQs</span>}
@@ -422,8 +422,8 @@ const AdminSidebar = ({
               isCollapsed && !isMobileOpen ? "justify-center px-0" : ""
             } ${
               location.pathname.includes("/blog")
-                ? "text-slate-900 bg-slate-200/80 font-black"
-                : "text-slate-800 hover:bg-slate-200/70 hover:text-slate-900"
+                ? "text-white bg-white/10 font-black"
+                : "text-slate-300 hover:bg-white/5 hover:text-white"
             }`}
             onClick={() => toggleMenu("blog")}
           >
@@ -431,8 +431,8 @@ const AdminSidebar = ({
               <FaPenNib
                 className={`text-base shrink-0 ${
                   location.pathname.includes("/blog")
-                    ? "text-[#212121]"
-                    : "text-slate-600 group-hover:text-black"
+                    ? "text-[#FECD08]"
+                    : "text-slate-400 group-hover:text-[#FECD08]"
                 }`}
               />
               {(!isCollapsed || isMobileOpen) && <span>Blog</span>}
@@ -444,7 +444,7 @@ const AdminSidebar = ({
             )}
           </div>
           {isBlogOpen && (!isCollapsed || isMobileOpen) && (
-            <div className="flex flex-col pl-10 mt-1 gap-1 animate-fadeInUp">
+            <div className="flex flex-col pl-10 mt-1 gap-1 animate-fadeInUp border-l border-white/10 ml-4">
               {[
                 { name: "All Posts", path: "/react-admin/blog" },
                 { name: "Categories", path: "/react-admin/blog/categories" },
@@ -454,8 +454,8 @@ const AdminSidebar = ({
                   to={sub.path}
                   className={`text-[0.68rem] font-bold py-2 px-3 rounded-xl transition-all ${
                     location.pathname === sub.path
-                      ? "text-[#212121] bg-white shadow-xs font-black border-l-2 border-[#FECD08]"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+                      ? "text-[#FECD08] bg-[#FECD08]/15 font-black border-l-2 border-[#FECD08]"
+                      : "text-slate-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {sub.name}
@@ -467,27 +467,27 @@ const AdminSidebar = ({
       </nav>
 
       {/* FOOTER USER / LOGOUT */}
-      <div className="pt-4 mt-4 border-t border-slate-200 flex items-center justify-between">
+      <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
         {!isCollapsed || isMobileOpen ? (
           <>
             <div className="flex items-center gap-3 overflow-hidden">
-              <div className="w-9 h-9 rounded-xl bg-[#FECD08]/20 border border-[#FECD08]/40 flex items-center justify-center text-[#212121] shrink-0 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#FECD08]/15 border border-[#FECD08]/30 flex items-center justify-center text-[#FECD08] shrink-0 shadow-sm">
                 <FaUserShield size={16} />
               </div>
               <div className="overflow-hidden">
-                <h4 className="text-[0.7rem] font-black text-slate-900 uppercase tracking-wider truncate font-heading">
+                <h4 className="text-[0.7rem] font-black text-white uppercase tracking-wider truncate font-heading">
                   {adminUser.username || "LBC Admin"}
                 </h4>
                 <div className="flex items-center gap-1.5 mt-0.5">
                   <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
-                  <span className="text-[0.55rem] font-bold text-slate-500 uppercase tracking-widest">
+                  <span className="text-[0.55rem] font-bold text-slate-400 uppercase tracking-widest truncate max-w-[130px] block">
                     {adminUser.email || "support@lbcmoto.com"}
                   </span>
                 </div>
               </div>
             </div>
             <button
-              className="w-9 h-9 rounded-xl bg-white text-slate-700 hover:bg-red-50 hover:text-red-600 flex items-center justify-center transition-all cursor-pointer border border-slate-200/60 shadow-xs"
+              className="w-9 h-9 rounded-xl bg-[#242424] text-slate-400 hover:bg-red-500/20 hover:text-red-400 hover:border-red-500/30 flex items-center justify-center transition-all cursor-pointer border border-white/10 shadow-xs"
               onClick={handleLogout}
               title="Logout"
             >
@@ -497,7 +497,7 @@ const AdminSidebar = ({
         ) : (
           <div className="w-full flex justify-center">
             <button
-              className="w-10 h-10 rounded-xl bg-white text-slate-700 hover:bg-red-50 hover:text-red-600 flex items-center justify-center transition-all cursor-pointer border border-slate-200/80 shadow-xs"
+              className="w-10 h-10 rounded-xl bg-[#242424] text-slate-400 hover:bg-red-500/20 hover:text-red-400 hover:border-red-500/30 flex items-center justify-center transition-all cursor-pointer border border-white/10 shadow-xs"
               onClick={handleLogout}
               title="Logout"
             >

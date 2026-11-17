@@ -100,10 +100,10 @@ const AllProducts = () => {
       <div className="flex justify-between items-end gap-6 flex-wrap">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-2 h-2 bg-[#FECD08] rounded-full animate-pulse shadow-[0_0_10px_#FECD08]"></div>
-            <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#FECD08]/60">Inventory Management</span>
+            <div className="w-2.5 h-2.5 bg-slate-900 rounded-full animate-pulse ring-2 ring-slate-900/20"></div>
+            <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-slate-900 font-heading">Inventory Management</span>
           </div>
-          <h2 className="text-[2.2rem] font-black text-slate-900 uppercase tracking-tighter leading-none">All <span className="text-[#b89000]">Products</span></h2>
+          <h2 className="text-[2.2rem] font-black text-slate-900 uppercase tracking-tighter leading-none">All <span className="text-slate-900 font-heading">Products</span></h2>
           <p className="text-[0.7rem] font-bold text-slate-500 uppercase tracking-widest mt-2">Managing {filteredProducts.length} Products</p>
         </div>
 

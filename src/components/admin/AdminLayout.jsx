@@ -29,10 +29,10 @@ const AdminLayout = () => {
       )}
 
       {/* Mobile Top Header with Menu Button */}
-      <div className="fixed top-0 left-0 right-0 h-[56px] bg-white/95 backdrop-blur-md border-b border-slate-200 z-[90] flex md:hidden items-center justify-between px-4">
+      <div className="fixed top-0 left-0 right-0 h-[56px] bg-[#181818]/95 backdrop-blur-md border-b border-white/10 z-[90] flex md:hidden items-center justify-between px-4">
         <button
           onClick={() => setIsMobileOpen(true)}
-          className="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors cursor-pointer"
+          className="w-9 h-9 rounded-xl bg-[#242424] hover:bg-[#FECD08] hover:text-[#212121] text-white flex items-center justify-center transition-colors cursor-pointer border border-white/10"
           title="Open Menu"
         >
           <FaBars size={15} />

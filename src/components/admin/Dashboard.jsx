@@ -84,19 +84,25 @@ const Dashboard = () => {
       {/* HEADER SECTION */}
       <div className="flex justify-between items-end gap-6 flex-wrap">
         <div>
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-2 h-2 bg-[#FECD08] rounded-full animate-pulse shadow-[0_0_10px_#FECD08]"></div>
-            <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#FECD08]/60">System Analytics</span>
+          <div className="flex items-center gap-2.5 mb-2">
+            <div className="w-2.5 h-2.5 bg-slate-900 rounded-full animate-pulse ring-2 ring-slate-900/20"></div>
+            <span className="text-[0.68rem] font-black uppercase tracking-[0.35em] text-slate-900 font-heading">
+              System Analytics
+            </span>
           </div>
-          <h2 className="text-[2.2rem] font-black text-slate-900 uppercase tracking-tighter leading-none">Dashboard <span className="text-[#b89000]">Overview</span></h2>
-          <p className="text-[0.7rem] font-bold text-slate-400 uppercase tracking-widest mt-2">Live metrics from system database</p>
+          <h2 className="text-[2.2rem] font-black text-slate-900 uppercase tracking-tighter leading-none font-heading">
+            Dashboard Overview
+          </h2>
+          <p className="text-[0.72rem] font-bold text-slate-600 uppercase tracking-widest mt-2">
+            Live metrics from system database
+          </p>
         </div>
         <div className="flex gap-3">
           <button
             onClick={() => setRefreshKey(prev => prev + 1)}
-            className="bg-white border border-slate-200 px-5 py-3 rounded-xl text-[0.65rem] font-black uppercase tracking-[0.2em] text-slate-700 hover:bg-slate-50 transition-all flex items-center gap-2 active:scale-95 cursor-pointer shadow-sm"
+            className="bg-white border border-slate-300 px-5 py-3 rounded-xl text-[0.65rem] font-black uppercase tracking-[0.2em] text-slate-900 hover:bg-slate-100 transition-all flex items-center gap-2 active:scale-95 cursor-pointer shadow-sm"
           >
-            <FaSyncAlt className="text-[#b89000]" /> Refresh Stats
+            <FaSyncAlt className="text-slate-900" /> Refresh Stats
           </button>
         </div>
       </div>
@@ -107,28 +113,28 @@ const Dashboard = () => {
           {
             label: "Total Sales",
             value: `Rs. ${Number(stats?.summary?.gross_sales || 0).toLocaleString()}`,
-            icon: <FaMoneyBillWave className="text-[#b89000]" size={18} />,
-            colorClass: "text-[#b89000]",
+            icon: <FaMoneyBillWave className="text-slate-900" size={18} />,
+            colorClass: "text-slate-900",
             link: "/react-admin/orders"
           },
           {
             label: "Total Orders",
             value: stats?.summary?.orders_count || 0,
-            icon: <FaShoppingCart className="text-blue-500" size={18} />,
+            icon: <FaShoppingCart className="text-blue-600" size={18} />,
             colorClass: "text-slate-900",
             link: "/react-admin/orders"
           },
           {
             label: "Total Customers",
             value: stats?.summary?.customers_count || 0,
-            icon: <FaUsers className="text-emerald-500" size={18} />,
+            icon: <FaUsers className="text-emerald-600" size={18} />,
             colorClass: "text-slate-900",
             link: "/react-admin/customers"
           },
           {
             label: "Fulfillment Rate",
             value: stats?.summary?.fulfilled_rate || "0%",
-            icon: <FaList className="text-purple-500" size={18} />,
+            icon: <FaList className="text-purple-600" size={18} />,
             colorClass: "text-slate-900",
             link: "/react-admin/orders"
           }
@@ -136,11 +142,11 @@ const Dashboard = () => {
           <div
             key={idx}
             onClick={() => navigate(kpi.link)}
-            className="group bg-white shadow-sm border border-slate-200 p-7 rounded-[2rem] transition-all duration-300 hover:border-[#FECD08]/20 hover:bg-slate-50/50 cursor-pointer flex flex-col justify-between"
+            className="group bg-white shadow-sm border border-slate-200 p-7 rounded-[2rem] transition-all duration-300 hover:border-slate-400 hover:bg-slate-50/50 cursor-pointer flex flex-col justify-between"
           >
             <div className="flex justify-between items-center mb-4">
-              <span className="text-[0.6rem] font-black text-slate-400 uppercase tracking-[0.25em]">{kpi.label}</span>
-              <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <span className="text-[0.62rem] font-black text-slate-600 uppercase tracking-[0.25em]">{kpi.label}</span>
+              <div className="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:scale-105 transition-transform">
                 {kpi.icon}
               </div>
             </div>
@@ -190,7 +196,7 @@ const Dashboard = () => {
             </div>
             <div className="text-right">
               <div className="text-xl font-black text-slate-900 tracking-tighter">Rs. {Number(stats?.summary?.gross_sales || 0).toLocaleString()}</div>
-              <span className="text-[0.55rem] font-black text-[#b89000] uppercase tracking-widest">Aggregate Sales</span>
+              <span className="text-[0.55rem] font-black text-slate-700 uppercase tracking-widest">Aggregate Sales</span>
             </div>
           </div>
 
@@ -272,7 +278,7 @@ const Dashboard = () => {
               return (
                 <div key={idx} className="bg-slate-50 border border-slate-100 p-6 rounded-2xl hover:border-[#FECD08]/20 transition-all flex flex-col justify-between gap-4">
                   <div>
-                    <span className="text-[0.55rem] font-black text-[#b89000] uppercase tracking-wider block mb-1">Rank #{idx + 1}</span>
+                    <span className="text-[0.55rem] font-black text-slate-900 uppercase tracking-wider block mb-1">Rank #{idx + 1}</span>
                     <h4 className="text-xs font-bold text-slate-800 line-clamp-2 min-h-[2rem] uppercase tracking-tight">{p.product__title}</h4>
                   </div>
                   

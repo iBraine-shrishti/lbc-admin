@@ -220,10 +220,10 @@ const Orders = () => {
       <div className="flex justify-between items-end gap-6 flex-wrap">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-2 h-2 bg-[#FECD08] rounded-full animate-pulse shadow-[0_0_10px_#FECD08]"></div>
-            <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-[#FECD08]/60">Order Management</span>
+            <div className="w-2.5 h-2.5 bg-slate-900 rounded-full animate-pulse ring-2 ring-slate-900/20"></div>
+            <span className="text-[0.6rem] font-black uppercase tracking-[0.4em] text-slate-900 font-heading">Order Management</span>
           </div>
-          <h2 className="text-[2.2rem] font-black text-slate-900 uppercase tracking-tighter leading-none">Global <span className="text-[#b89000]">Orders</span></h2>
+          <h2 className="text-[2.2rem] font-black text-slate-900 uppercase tracking-tighter leading-none">Global <span className="text-slate-900 font-heading">Orders</span></h2>
           <p className="text-[0.7rem] font-bold text-slate-500 uppercase tracking-widest mt-2">Managing {orders.length} Total Orders</p>
         </div>
 
@@ -267,7 +267,7 @@ const Orders = () => {
             <div>
                <span className="text-[0.55rem] font-black text-slate-500 uppercase tracking-[0.3em] block mb-2">{kpi.label}</span>
                <div className="text-2xl font-black text-slate-900 tracking-tighter">{kpi.value}</div>
-               <span className="text-[0.55rem] font-bold text-[#FECD08]/40 uppercase tracking-widest mt-2 block">{kpi.trend}</span>
+               <span className="text-[0.55rem] font-bold text-slate-600 uppercase tracking-widest mt-2 block">{kpi.trend}</span>
             </div>
             <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-500 group-hover:text-[#b89000] transition-colors">{kpi.icon}</div>
           </div>
